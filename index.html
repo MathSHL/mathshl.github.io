@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京中韧智能科技有限公司 | Zhongren AI</title>
+    <style>
+        /* 全局重置与基础样式 */
+        :root {
+            --bg-color: #ffffff;
+            --secondary-bg: #f9f9f9;
+            --text-primary: #111111;
+            --text-secondary: #666666;
+            --card-radius: 24px;
+            --btn-radius: 9999px;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            margin-left: 24px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .btn-trial {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: var(--btn-radius);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .btn-trial:hover { opacity: 0.8; }
+
+        /* 头部 Hero 区域 */
+        .hero {
+            padding: 80px 5% 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        /* 内容网格布局 */
+        .container {
+            padding: 20px 5% 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background-color: var(--secondary-bg);
+            border-radius: var(--card-radius);
+            padding: 32px;
+            transition: transform 0.2s, background-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+
+        .card:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* 底部 */
+        footer {
+            border-top: 1px solid #f0f0f0;
+            padding: 60px 5%;
+            background-color: #fafafa;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col li { margin-bottom: 10px; }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* 简化移动端：隐藏菜单 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">中韧智能 ZHONGREN AI</div>
+        <div class="nav-links">
+            <a href="#">研究</a>
+            <a href="#">产品</a>
+            <a href="#">解决方案</a>
+            <a href="#">关于我们</a>
+        </div>
+        <a href="#" class="btn-trial">联系我们</a>
+    </nav>
+
+    <!-- 头部 Hero 区域 -->
+    <header class="hero">
+        <h1>构建安全、透明的<br>人工智能生态系统</h1>
+        <p>北京中韧智能科技有限公司致力于人工智能理论与算法软件开发，为企业提供从基础资源到行业应用的全方位技术支持。</p>
+    </header>
+
+    <!-- 主要内容网格 -->
+    <main class="container">
+
+        <!-- 卡片 1: 核心业务 -->
+        <div class="card">
+            <div>
+                <span class="tag">核心业务</span>
+                <h3>人工智能软件开发</h3>
+                <p>专注于人工智能理论与算法软件开发、人工智能通用应用系统及基础软件开发，为行业提供强大的技术引擎。</p>
+            </div>
+        </div>
+
+        <!-- 卡片 2: 系统集成 -->
+        <div class="card">
+            <div>
+                <span class="tag">企业服务</span>
+                <h3>系统集成与技术服务</h3>
+                <p>提供信息系统集成服务、人工智能行业应用系统集成及物联网技术服务，助力企业数字化转型。</p>
+            </div>
+        </div>
+
+        <!-- 卡片 3: 硬件与销售 -->
+        <div class="card">
+            <div>
+                <span class="tag">硬件设施</span>
+                <h3>智能硬件与销售</h3>
+                <p>涵盖人工智能硬件、智能机器人、云计算设备及信息安全设备的销售与租赁服务。</p>
+            </div>
+        </div>
+
+        <!-- 卡片 4: 数据服务 -->
+        <div class="card">
+            <div>
+                <span class="tag">数据平台</span>
+                <h3>人工智能数据平台</h3>
+                <p>构建人工智能基础资源与技术平台，提供互联网数据服务、公共数据平台支持及数据处理存储服务。</p>
+            </div>
+        </div>
+
+        <!-- 卡片 5: 公司基本信息 -->
+        <div class="card" style="background-color: #fff; border: 1px solid #eee;">
+            <div>
+                <span class="tag">企业信息</span>
+                <h3>北京中韧智能科技有限公司</h3>
+                <p><strong>成立时间：</strong>2025年02月27日</p>
+                <p><strong>法定代表人：</strong>孙洪林</p>
+                <p style="margin-top:10px;"><strong>注册地址：</strong>北京市大兴区宏业东路2号院1号楼3层1153</p>
+            </div>
+        </div>
+
+        <!-- 卡片 6: 经营范围摘要 -->
+        <div class="card">
+            <div>
+                <span class="tag">经营范围</span>
+                <h3>多元化业务布局</h3>
+                <p>技术服务、技术开发、技术咨询；计算机软硬件及辅助设备零售与批发；通信设备销售；企业管理咨询；广告设计代理；技术进出口等。</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>中韧智能</h4>
+                <p>致力于推动人工智能技术的普及与应用，构建开放、合作的智能生态。</p>
+            </div>
+            <div class="footer-col">
+                <h4>链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">招贤纳士</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>北京市大兴区宏业东路2号院</li>
+                    <li>contact@zhongrenai.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 北京中韧智能科技有限公司. 保留所有权利。<br>
+            许可项目：网络文化经营；第二类增值电信业务；出版物零售。
+        </div>
+    </footer>
+
+</body>
+</html>
